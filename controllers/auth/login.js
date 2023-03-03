@@ -1,5 +1,7 @@
 const { User } = require("../../models/user");
+
 const jwt = require("jsonwebtoken");
+
 const { SECRET_KEY } = process.env;
 
 const bcrypt = require("bcrypt");
@@ -14,6 +16,7 @@ const login = async (req, res) => {
     throw HttpError(401, "email or password wrong");
   }
   const passwordCompare = bcrypt.compare(password, user.password);
+
   if (!passwordCompare) {
     throw HttpError(401, "email or password wrong");
   }
