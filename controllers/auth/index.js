@@ -6,4 +6,6 @@ const { getCurrent } = require("./getCurrent");
 
 const { logout } = require("./logout");
 
-module.exports = { register, login, getCurrent, logout };
+const { updateAvatar } = require("./updateAvatar");
+
+module.exports = { register, login, getCurrent, logout, updateAvatar };
